@@ -1,15 +1,15 @@
 var express = require("express");
-
 var router = express.Router();
 
-// Import the model (users.js) to use its database functions.
-
+// Import the model (users.js) to use its database functions
 var db = require("../models/");
 
+//index -- homepage
 router.get('/', function (req, res) {
     res.render('index');
 });
 
+//admin page
 router.get('/admin', function (req, res) {
     //res.render('admin');
     db.User.findAll({}).then(function (data) {
@@ -17,14 +17,28 @@ router.get('/admin', function (req, res) {
     })
 });
 
+//login page
 router.get('/login', function (req, res) {
     res.render('login');
 });
 
+//registration page
 router.get('/reg', function (req, res) {
     res.render('reg');
 });
 
+//need to add functions to assets/js/users.js
+router.get("/admin/users/:id", function (req, res) {
+  db.User.findOne({
+    where: {
+      id: req.params.id
+    },
+  }).then(function(dbUser) {
+    res.json(dbUser);
+  });
+});
+
+module.exports = router;
 
 // Create all our routes and set up logic within those routes where required.
 // router.get("/", function (req, res) {
@@ -77,4 +91,4 @@ router.get('/reg', function (req, res) {
 // });
 
 // Export routes for server.js to use.
-module.exports = router;
+
