@@ -3,13 +3,15 @@
 CREATE DATABASE fareFinder_db;
 USE fareFinder_db;
 
-CREATE TABLE fares
+CREATE TABLE users
 (
 	id int NOT NULL AUTO_INCREMENT,
-	VarName1 varchar(255) NOT NULL,
-	VarName2 BOOLEAN DEFAULT false,
+	name varchar(100) NOT NULL,
+	email varchar(100) NOT NULL,
+	password varchar(100) NOT NULL,
 	-- required for sequelize
 	createdAt DATETIME NOT NULL,
 	updatedAt DATETIME NOT NULL,
 	PRIMARY KEY (id)
 );
+
