@@ -29,13 +29,13 @@ router.get('/reg', function (req, res) {
 
 //need to add functions to assets/js/users.js
 router.get("/admin/users/:id", function (req, res) {
-  db.User.findOne({
-    where: {
-      id: req.params.id
-    },
-  }).then(function(dbUser) {
-    res.json(dbUser);
-  });
+    db.User.findOne({
+        where: {
+            id: req.params.id
+        },
+    }).then(function (dbUser) {
+        res.json(dbUser);
+    });
 });
 
 module.exports = router;
