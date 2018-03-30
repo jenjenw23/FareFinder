@@ -1,11 +1,27 @@
 var express = require("express");
 var router = express.Router();
+var keys = require("../keys.js")
+//var sourceFile = require('../public/assets/js/autocomplete.js');
 
 // Import the model (users.js) to use its database functions
 var db = require("../models/");
 
+var Uber = require('node-uber');
+
+var uber = new Uber({
+  client_id: 'hFgXIZU8GWKLZXZ2N0DvzHS9Y3R6Ssb0',
+  client_secret: 'wVhvFEpIq-VqJwY8Qb6z5gZutjJ8E1E2_AU-tmuZ',
+  server_token: 'W7bo0EFEbEw-eDW8RK0C_ADwWDoy7qm9RTxW7CmE',
+  redirect_uri: 'http://localhost',
+  name: 'Test'
+});
+
+//var googleApi;
+
 //index -- homepage
 router.get('/', function (req, res) {
+    //googleApi = keys.google.api_key;
+    //console.log(googleApi);
     res.render('index');
 });
 
@@ -25,6 +41,13 @@ router.get('/login', function (req, res) {
 //registration page
 router.get('/reg', function (req, res) {
     res.render('reg');
+});
+
+router.get('/estimates', function (req, res) {
+    //console.log(sourceFile.startLat);
+    //console.log(ffCoords);
+    res.render('estimates');
+
 });
 
 //need to add functions to assets/js/users.js
