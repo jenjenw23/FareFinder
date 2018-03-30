@@ -26,7 +26,7 @@
 <nav class="navbar navbar-light bg-light fixed-top"> <a class="navbar-brand" href="/"> <img src="assets/images/benefare2.png" width="50" height="50" class="d-inline-block align-top" alt="benefare logo"> <span class="headName">Benefare</span> </a>
   <div class="fixed-top">
     <ul class="nav justify-content-end">
-	  <li class="nav-item"> <a class="nav-link" href="/"><i class="fa fa-home fa-sm"></i></a> </li>
+      <li class="nav-item"> <a class="nav-link" href="/"><i class="fa fa-home fa-sm"></i></a> </li>
       <li class="nav-item"> <a class="nav-link" href="/reg">Sign Up</a> </li>
       <li class="nav-item"> <a class="nav-link" href="/login">Login</a> </li>
       <!--      <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
@@ -62,11 +62,21 @@
 <!--index-->
 <div class="container">
   <div class="row" style="margin-top: 15px;">
-    <div class="col text-center"> 
-      <!--    	{{#link-to "index" class="btn btn-default"}}Home{{/link-to}}
-    	{{#link-to "admin" class="btn btn-default"}}Admin{{/link-to}} --> 
-      <a class="btn btn-default" href="/" role="button">Home</a> <a class="btn btn-default" href="/admin" role="button">Admin</a> <a class="btn btn-default" href="/login" role="button">Login</a> <a class="btn btn-default" href="/reg" role="button">Register</a>
-      <h2>----------</h2>
+    <div class="col text-center">
+      <div id="locationField">
+        <label for="autocomplete" class="col-sm-2 col-form-label">Pick Up Location</label>
+        <br/>
+        <input id="autocomplete" class="form-control form-control-lg" placeholder="Enter your address" onFocus="geolocate()" type="text">
+        </input>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 15px;">
+    <div class="col text-center">
+      <label for="autocomplete2" class="col-sm-2 col-form-label">Drop Off Location</label>
+      <br/>
+      <input id="autocomplete2" class="form-control form-control-lg" placeholder="Enter your address" onFocus="geolocate()" type="text">
+      </input>
     </div>
   </div>
   <div class="row"  style="margin-top: 15px;">
