@@ -8,13 +8,7 @@ var db = require("../models/");
 
 var Uber = require('node-uber');
 
-var uber = new Uber({
-  client_id: 'hFgXIZU8GWKLZXZ2N0DvzHS9Y3R6Ssb0',
-  client_secret: 'wVhvFEpIq-VqJwY8Qb6z5gZutjJ8E1E2_AU-tmuZ',
-  server_token: 'W7bo0EFEbEw-eDW8RK0C_ADwWDoy7qm9RTxW7CmE',
-  redirect_uri: 'http://localhost',
-  name: 'Test'
-});
+
 
 //var googleApi;
 
